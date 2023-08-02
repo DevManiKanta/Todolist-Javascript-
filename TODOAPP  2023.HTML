@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <title>MyTodoApp</title>
+    <style>
+        .main{
+            
+            align-items:center;
+            justify-content:center;
+            margin-top:100px;
+            width: 500px;
+            border: 10px solid rgb(18, 21, 18);
+            padding: 50px; 
+             margin-left: 500px;
+             background-color: aqua;
+             background-image:url(https://img.freepik.com/free-photo/purple-blue-wallpaper-with-colorful-swirl_1340-27545.jpg?size=626&ext=jpg&ga=GA1.2.1888065705.1678431942);
+        }
+        input { 
+            width:70%;
+            height:50px;
+            font-size: xx-large;
+            border:none;
+            color: brown;
+            margin-top:10px;
+            text-align:center;
+            border-bottom:5px solid blueviolet;
+        }
+         #btn{
+            width:70px;
+            height:65px;
+            background-color: rgb(43, 156, 226);
+            border-radius:10px;
+            font-size:medium;
+        }
+        button{
+           width:50px;
+           height:40px;
+           background-color: blueviolet;
+           border:2px solid black;
+           border-radius: 10px;
+           color: rgb(25, 25, 25);
+           margin-left:;
+        }
+        li{
+            font-size: xx-large;
+            color: brown;
+           font-family: "Sofia", sans-serif;
+        }
+
+        h1{ margin-bottom:50px;
+        color: rgb(167, 10, 10);
+    }
+    </style>
+</head>
+<body>
+      
+    <div class="main">
+        <center><h1><u>MY-Todo-App<br></u></h1></center>
+        <input type="text" placeholder="type here" id="input">&nbsp;
+        <button id="btn";>SUBMIT</button>
+        <ul class="ul" style="list-style-type:none;">
+        </ul>
+    </div>
+    <script>
+        document.getElementById("btn").addEventListener("click",
+         function(){
+            let input = document.getElementById("input").value;
+             let elem = document.createElement("li");
+             let btn1 = document.createElement("button");
+             let btn2 = document.createElement("button");
+             btn1.innerHTML = "Done";
+             btn2.innerHTML = "Del";
+             elem.innerHTML =input;
+             let ul = document.querySelector("ul");
+             ul.appendChild(elem);
+             elem.appendChild(btn1);
+             elem.appendChild(btn2);
+            btn1.addEventListener("click",
+             function(){
+                elem.style.textDecoration = "line-through"
+             }
+            ) 
+            btn2.addEventListener("click", 
+            function(){
+                elem.remove();
+            
+            }
+            ) 
+
+            document.getElementById("input").innerHTML = "";
+         }
+         
+
+        )
+        
+    
+        
+    </script>
+    
+</body>
+</html>
